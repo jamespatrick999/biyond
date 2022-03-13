@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-let url = "http://localhost:3000/a/";
+let url = "https://hardcore-fermi-5360ba.netlify.app/a/";
 
 export class ReferralLink extends Component {
 
