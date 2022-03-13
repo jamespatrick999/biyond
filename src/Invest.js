@@ -87,13 +87,13 @@ export class Invest extends Component {
             boxShadow: "0 0 20px #eee",backgroundImage: "linear-gradient(to right, #131050, black)"
         };
 
-        const addButton = {
-            display: "inline-block",
-            padding: "0.5em 1em",
-            textDecoration: "none",
-            color: "#FFF",
-            transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px", border: "3px solid white", backgroundColor: "black"
-        }
+        // const addButton = {
+        //     display: "inline-block",
+        //     padding: "0.5em 1em",
+        //     textDecoration: "none",
+        //     color: "#FFF",
+        //     transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px", border: "3px solid white", backgroundColor: "black"
+        // }
 
         const purchaseButton = {
             display: "inline-block",

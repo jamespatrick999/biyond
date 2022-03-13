@@ -4,9 +4,7 @@ import back from "./assets/bg7.jpg"
 import getBlockchain from './ethereum.js'; 
 import TopSponsor2 from "./TopSponsor2";  
 //TM5uShsLgdvTX9JXvwnEgY3zWsCqDWxjN w  TGy7DG3PPmpt4b4sJG9HKnEWDj8xezjTG T let url = "s://hardcore-newton-af71f6.netlify.app/" https://tronexsun.net/ p/ ;
-let url = "http://localhost:3000/";
-let contract_address = '0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc';
-
+ 
 // let tronContracturl = "https://tronscan.org/#/contract/" + contract_address;
 // let tronAddressurl = "https://tronscan.org/#/address/";
 

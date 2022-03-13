@@ -137,7 +137,7 @@ export class ApproveUSD extends Component {
                                 const amount = this.state.count;
                                 const usdApproved = this.props.usdApproved;
 
-                                if (amount >= 20 && usdApproved == 0) {
+                                if (amount >= 20 && usdApproved === 0) {
                                     this.firstAllowance(spender, amount); 
                                 } else if (amount >= 20 ) {
                                     this.nextAllowance(spender, amount); 

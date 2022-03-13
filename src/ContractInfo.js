@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import getBlockchain from './ethereum.js';
+import React, { Component } from 'react' 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 

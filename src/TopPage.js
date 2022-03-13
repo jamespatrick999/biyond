@@ -9,8 +9,8 @@ import back from "./assets/bg7.jpg"
 import ReferralLink from './ReferralLink.js';
 import Withdraw from './Withdraw.js';
 
-const tokenAddress = "0x7CF0cD831f0DF6A3DE92Ce0338475526be5da377"; 
-const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
+// const tokenAddress = "0x7CF0cD831f0DF6A3DE92Ce0338475526be5da377"; 
+// const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
 const contractAddress = "0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc";
 
 class TopPage extends Component { 
