@@ -30,15 +30,18 @@ export class Invest extends Component {
         const { contractInstance } = await getBlockchain();
 
         if (amount >= 20) {
+            let amt = Number(amount).toFixed();
+            amt = amt + "000000000000000000";
+
             await contractInstance
-                .purchase(refid, Number(amount*10**18).toString())
+                .purchase(refid, amt)
                 .then(res => toast.success(amount + ' USDT worth of token purchase processing, please do not refresh', { position: toast.POSITION.TOP_RIGHT, autoClose: 10000 })
 
                 ).then(res => {
                     setInterval(() => {
                         window.location = "/";
                     }, 12000);
-                }).catch(err => toast.error("Insufficient Balance or Transaction Declined"));
+                }).catch(err => toast.error(err+ " Unknown error"));
         } else {
             toast.info('Minimum purchase allowed is 20 USDT');
         } 
@@ -148,7 +151,7 @@ export class Invest extends Component {
                             <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.usdApproved).toFixed(0)} USDT</p>
                              
  
-                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Your token Balance : {this.props.tokenBal} tokens</p>
+                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Your BOND Balance : {this.props.rtBal} BOND</p>
                             
 
                             <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Contract token Balance : {this.props.contractRTBal} tokens</p>

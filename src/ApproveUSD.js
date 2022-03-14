@@ -162,18 +162,23 @@ export class ApproveUSD extends Component {
                                 const spender = this.state.contractAddress;
                                 const amount = this.state.count;
                                 const usdApproved = this.props.usdApproved;
-
-                                if (amount >= 20 && usdApproved === 0) {
-                                    this.firstAllowance(spender, amount); 
-                                } else if (amount >= 20 ) {
-                                    this.nextAllowance(spender, amount); 
+                                const usdtBal = this.props.usdtBal;
+                                if(amount <= usdtBal){
+                                    if (amount >= 20 && usdApproved === 0) {
+                                        this.firstAllowance(spender, amount); 
+                                    } else if (amount >= 20 ) {
+                                        this.nextAllowance(spender, amount); 
+                                    } else {
+                                        toast.error("Min deposit is 20 USDT");
+                                    } 
                                 } else {
-                                    toast.error("Min deposit is 20 USDT");
-                                } 
+                                    toast.error("Approvable balance should be less than available balance");
+                                }
+                               
                             }}
 
                         >    
-                        <label style={{color: "#2DE1EE"}}>Enter Amount </label>
+                        <label style={{color: "#2DE1EE"}}>Enter Amount (in USDT) </label>
                         <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "#2DE1EE", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
 
 

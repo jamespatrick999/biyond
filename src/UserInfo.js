@@ -31,19 +31,19 @@ export class UserInfo extends Component {
                             <a href="#1" style={{ color: "#2DE1EE", fontSize: "17px", textAlign: "center" }}> {this.props.upline }  </a>
                             <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}> Withdrawable USDT Balance</p>
-                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.tusd_balance }  </a>
+                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.tusd_balance } USDT </a>
                             <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}> Number of Purchases</p>
-                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.no_of_purchases }  </a>
+                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> # {this.props.no_of_purchases }  </a>
                             <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Direct Business</p>
-                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.direct_biz }  </a>
+                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.direct_biz } USDT  </a>
                             <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Pool Bonus</p>
-                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.pool_bonus }  </a>
+                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.pool_bonus } USDT </a>
                             <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Generation Bonus</p>
-                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.gen_bonus }  </a>
+                            <a href="#1" style={{ color: "#2DE1EE", fontSize: "20px", textAlign: "center" }}> {this.props.gen_bonus } USDT </a>
                             <br /><br /> 
                             
                         </div>
