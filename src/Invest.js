@@ -110,7 +110,7 @@ export class Invest extends Component {
                     <div className="col-xl-4" style={colStyle}>
 
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#1AE865", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                            Purchase Section</div>
                         <br />
                         <form
@@ -145,15 +145,15 @@ export class Invest extends Component {
                             <a href="#500000" className="btn btn-primary" style={addButton} onClick={this.button500k}>+500 k</a>
                             <a href="#reset" className="btn btn-primary" style={addButton} onClick={this.reset}>Reset</a><br /> */}
                             
-                            <p style={{ color: "#1AE865", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.usdApproved).toFixed(0)} USDT</p>
+                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.usdApproved).toFixed(0)} USDT</p>
                              
  
-                            <p style={{ color: "#1AE865", textAlign: "center", fontSize: "15px" }}>Your token Balance : {this.props.tokenBal} tokens</p>
+                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Your token Balance : {this.props.tokenBal} tokens</p>
                             
 
-                            <p style={{ color: "#1AE865", textAlign: "center", fontSize: "15px" }}>Contract token Balance : {this.props.contractRTBal} tokens</p>
+                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Contract token Balance : {this.props.contractRTBal} tokens</p>
 
-                            <p style={{ color: "#1AE865", textAlign: "center", fontSize: "14px" }}>RT Balance : {this.props.rtBal} RT </p>
+                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
                             <button type="submit" className="btn btn-success" style={purchaseButton}>Purchase</button> 
  
                         </form>

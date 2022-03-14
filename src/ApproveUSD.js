@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import getBlockchain from './ethereum.js';
+// import { ethers } from 'ethers'; 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
@@ -31,15 +32,36 @@ export class ApproveUSD extends Component {
         const { usdtInstance } = await getBlockchain();
 
         if (amount >= 20) {
+             
+            let amt = Number(amount).toFixed();
+            amt = amt + "000000000000000000";
+            console.log(typeof amt ); 
+
+            // // let amt1 = amt.toLocaleString();
+            // // console.log( amt1 ); 
+            // // amt = amt.toLocaleString('fullwide', {useGrouping:false})
+            // // console.log( amt); 
+
+            // const myNumb = 1000000000000000000000;
+            // console.log( myNumb ); // 1e+21
+            // console.log( myNumb.toLocaleString() );
+            // console.log( myNumb.toLocaleString('fullwide', {useGrouping:false}) );
+            // amt = amt.toString();
+            // console.log( amt); 
+            // amt= amt.toString(); 
+            // let amt2 = "10000";
+            
+            // console.log( typeof amt2)
+
             await usdtInstance
-                .approve(spender, Number(amount*10**18).toString() )
+                .approve(spender, amt)
                 .then(res => toast.success(amount + ' USDT approval processing, Please wait do not refresh', { position: toast.POSITION.TOP_RIGHT, autoClose: 20000 })
 
                 ).then(res => {
                     setInterval(() => {
                         window.location.reload();
                     }, 20000);
-                }).catch(err => toast.error("Insufficient Balance or Transaction Declined (first)"));
+                }).catch(err => toast.error(err + " Unknown Error (first) "));
         } else {
             toast.info('Minimum approval allowed is 20 USDT');
         } 
@@ -49,15 +71,19 @@ export class ApproveUSD extends Component {
         const { usdtInstance } = await getBlockchain();
 
         if (amount >= 20) {
+            let amt = Number(amount).toFixed();
+            amt = amt + "000000000000000000";
+            console.log(typeof amt ); 
+
             await usdtInstance
-                .increaseAllowance(spender, Number(amount*10**18).toString() )
+                .increaseAllowance(spender, amt )
                 .then(res => toast.success(amount + ' USDT approval processing, Please wait do not refresh', { position: toast.POSITION.TOP_RIGHT, autoClose: 20000 })) 
                 .then(res => {
                     setInterval(() => {
                         window.location.reload();
                     }, 20000);
                 })
-                .catch(err => toast.error(err + " Insufficient Balance or Transaction Declined (next)"));
+                .catch(err => toast.error(err + " Unknown Error (next)"));
         } else {
             toast.info('Minimum approval allowed is 20 USDT');
         } 
@@ -107,7 +133,7 @@ export class ApproveUSD extends Component {
             display: "inline-block",
             padding: "0.5em 1em",
             textDecoration: "none",
-            color: "#FFF",
+            color: "#2DE1EE",
             transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px", border: "3px solid white", backgroundColor: "black"
         }
 
@@ -125,7 +151,7 @@ export class ApproveUSD extends Component {
                     <div className="col-xl-4"></div>
                     <div className="col-xl-4" style={colStyle}> 
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#1AE865", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                            Approve USDT</div>
                         <br />
                         <form
@@ -147,8 +173,8 @@ export class ApproveUSD extends Component {
                             }}
 
                         >    
-                        <label style={{color: "white"}}>Enter Amount </label>
-                        <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "White", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
+                        <label style={{color: "#2DE1EE"}}>Enter Amount </label>
+                        <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "#2DE1EE", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
 
 
                         <a href="#10" className="btn btn-primary" style={addButton} onClick={this.button10}>+10</a> 
@@ -162,14 +188,14 @@ export class ApproveUSD extends Component {
 
                         <br />
 
-                        {/* <p style={{ color: "#1AE865", textAlign: "center", fontSize: "22px" }}>Your token Balance : {this.props.tokenBal} tokens</p> */}
-                        <p style={{ color: "#1AE865", textAlign: "center", fontSize: "14px" }}>Your USDT Balance : {this.props.usdtBal} USDT</p>
+                        {/* <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "22px" }}>Your token Balance : {this.props.tokenBal} tokens</p> */}
+                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>Your USDT Balance : {this.props.usdtBal} USDT</p>
                          
-                        <p style={{ color: "#1AE865", textAlign: "center", fontSize: "14px" }}>You will get (RT ) : {this.state.count/this.props.rtPrice}  </p>
+                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>You will get (BOND ) : {this.state.count/this.props.rtPrice}  </p>
                          
-                        <p style={{ color: "#1AE865", textAlign: "center", fontSize: "14px" }}>Price per token : {this.props.rtPrice} USDT </p>
+                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>Price per token : {this.props.rtPrice} USDT </p>
 
-                        <p style={{ color: "#1AE865", textAlign: "center", fontSize: "14px" }}>RT Balance : {this.props.rtBal} RT </p>
+                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
                          
                         <button type="submit" className="btn btn-success" style={firstAllowanceButton}>Approve USDT</button> 
  

@@ -55,15 +55,15 @@ class Withdraw extends Component {
                     <div className="col-xl-4"></div>
                     <div className="col-xl-4" style={colStyle}>
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#1AE865", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                             Total Withdrawable Balance</div>
                         <br />
 
 
-                        <div style={{ color: "white", fontSize: "29px", fontFamily: "MyFont", textAlign: "center" }}> {this.props.avlBalance} USDT</div>
-                        <br />
+                        <div style={{ color: "#2DE1EE", fontSize: "29px", fontFamily: "MyFont", textAlign: "center" }}> {this.props.avlBalance} USDT</div>
+                        {/* <br />
                         <p style={{ textAlign: "center", color: "grey" }}> Requires gas fee
-                        </p>
+                        </p> */}
 
 
                         <form

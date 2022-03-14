@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { toast } from 'react-toastify';
-import back from "./assets/bg7.jpg"
+import back from "./assets/bg10.jpg"
 import getBlockchain from './ethereum.js'; 
 import TopSponsor2 from "./TopSponsor2";  
-//TM5uShsLgdvTX9JXvwnEgY3zWsCqDWxjN w  TGy7DG3PPmpt4b4sJG9HKnEWDj8xezjTG T let url = "s://hardcore-newton-af71f6.netlify.app/" https://tronexsun.net/ p/ ;
  
-// let tronContracturl = "https://tronscan.org/#/contract/" + contract_address;
-// let tronAddressurl = "https://tronscan.org/#/address/";
-
 toast.configure();
 
 class TopSponsor extends Component {

@@ -5,13 +5,15 @@ import UserInfo from './UserInfo.js';
 import getBlockchain from './ethereum.js';
 import Invest from './Invest.js';
 import TopSponsor from './TopSponsor.js';
-import back from "./assets/bg7.jpg" 
+import back from "./assets/bg10.jpg" 
+import logo from "./assets/logo2.png" 
 import ReferralLink from './ReferralLink.js';
 import Withdraw from './Withdraw.js';
 
 // const tokenAddress = "0x7CF0cD831f0DF6A3DE92Ce0338475526be5da377"; 
 // const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
 const contractAddress = "0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc";
+// const url = "https://biyondinfinity.farm";
 
 class TopPage extends Component { 
 
@@ -121,7 +123,12 @@ class TopPage extends Component {
     };
     return (
         <div style={backStyle } >
-                
+                <div style={{ textAlign: "center" }}>
+                                        
+                            <img src={logo} alt=""  width="300" />
+                         
+                </div>
+
                 
                 {
                     this.state.usdApproved >= 20 ?
