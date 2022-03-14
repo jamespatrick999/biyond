@@ -1,9 +1,9 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 import { ethers, Contract } from 'ethers'; 
 
-const tokenAddress = "0x7CF0cD831f0DF6A3DE92Ce0338475526be5da377";
+const tokenAddress = "0xFa03245C5ac7d07a26e0acE92cbC64634CccF80B";
 const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
-const contractAddress = "0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc";
+const contractAddress = "0x7a58a9c3c76227010FcC41fEC2f3932EC9c64573";
 
 const tokenABI = [
 	{
@@ -1668,6 +1668,10 @@ const contractABI = [
 			{
 				"name": "direct_biz",
 				"type": "uint256"
+			},
+			{
+				"name": "team_biz",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1733,6 +1737,25 @@ const contractABI = [
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getTeamBiz",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{

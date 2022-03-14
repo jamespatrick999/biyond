@@ -28,7 +28,7 @@ export class ReferralLink extends Component {
             boxShadow: "0 0 20px #eee",
         };
 
-        const headerStyle = { marginTop: "-18px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }
+        const headerStyle = { marginTop: "-18px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#eee97f", textAlign: "center", fontWeight: "bold", fontSize: "21px" }
 
         const investButton = {
             display: "inline-block",
@@ -50,7 +50,7 @@ export class ReferralLink extends Component {
                         <br />
                         <div className="col-xl-12" style={{ textAlign: "center" }}>
                             <form style={{ textAlign: "center" }}>
-                                <input style={{ textAlign: "center", backgroundColor: "black", color: "#2DE1EE", width: "100%", height: "30px" }}
+                                <input style={{ textAlign: "center", backgroundColor: "black", color: "#eee97f", width: "100%", height: "30px" }}
                                     ref={(textarea) => this.textArea = textarea}
                                     value={url + this.props.currentAcc}
                                 />
@@ -59,7 +59,7 @@ export class ReferralLink extends Component {
                                 document.queryCommandSupported('copy') &&
                                 <p style={{ float: "right" }} >
                                     <button className="btn btn-success" onClick={this.copyToClipboard} style={investButton}  >Copy</button>
-                                    {this.state.copySuccess}
+                                    <span style={{ color: "white" }}>{this.state.copySuccess}</span>
                                 </p>
                             } <br />
                         </div>

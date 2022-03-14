@@ -19,41 +19,41 @@ class TopSponsor2 extends Component {
                     <div className="col-xl-3"></div>
                     <div className="col-xl-6" style={colStyle}>
 
-                        <div className="col-xl-6" style={{ marginTop: "-18px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-6" style={{ marginTop: "-18px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#eee97f", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                             Top Sponsor Stats</div>
                         <br />
 
                         <div className="col-xl-12" >
 
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "left" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
                                 1. {this.props.deps1 > 0 ? this.props.deps1 : "..."} USDT </p>
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
                                 {this.props.deps1 > 0 ? this.props.subAddress1 : null}... </p>
 
                             <br /><br />
 
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "left" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
                                 2. {this.props.deps2 > 0 ? this.props.deps2 : "..."} USDT </p>
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
                                 {this.props.deps2 > 0 ? this.props.subAddress2 : null}... </p>
 
                             <br /><br />
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "left" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
                                 3. {this.props.deps3 > 0 ? this.props.deps3 : "..."} USDT </p>
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
                                 {this.props.deps3 > 0 ? this.props.subAddress3 : null}... </p>
 
                             <br /><br />
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "left" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
                                 4. {this.props.deps4 > 0 ? this.props.deps4 : "..."} USDT </p>
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
                                 {this.props.deps4 > 0 ? this.props.subAddress4 : null}... </p>
 
                             <br /><br />
 
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "left" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
                                 5. {this.props.deps5 > 0 ? this.props.deps5 : "..."} USDT </p>
-                            <p style={{ color: "#2DE1EE", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
+                            <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
                                 {this.props.deps5 > 0 ? this.props.subAddress5 : null}... </p>
 
                             <br /><br />

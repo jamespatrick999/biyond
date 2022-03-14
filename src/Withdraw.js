@@ -45,7 +45,7 @@ class Withdraw extends Component {
             padding: "0.5em 1em",
             textDecoration: "none",
             color: "black",
-            transition: ".4s", marginTop: "30px", marginLeft: "180px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px"
+            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px"
         };
 
         return (
@@ -55,12 +55,12 @@ class Withdraw extends Component {
                     <div className="col-xl-4"></div>
                     <div className="col-xl-4" style={colStyle}>
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#eee97f", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                             Total Withdrawable Balance</div>
                         <br />
 
 
-                        <div style={{ color: "#2DE1EE", fontSize: "29px", fontFamily: "MyFont", textAlign: "center" }}> {this.props.avlBalance} USDT</div>
+                        <div style={{ color: "white", fontSize: "29px", fontFamily: "MyFont", textAlign: "center" }}> {this.props.avlBalance} USDT</div>
                         {/* <br />
                         <p style={{ textAlign: "center", color: "grey" }}> Requires gas fee
                         </p> */}
@@ -72,15 +72,14 @@ class Withdraw extends Component {
                                 event.preventDefault();
 
                                 this.withdraw();
-                            }}
-
-                        >
-
-
-                            {this.props.refLoading ? null :
-                                <button type="submit" className="btn btn-success" style={investButton}>Withdraw</button>}
-
-
+                            }} 
+                        > 
+                        {this.props.refLoading ? null :
+                            <div style={{ textAlign: "center" }}>
+                                <button type="submit" className="btn btn-success" style={investButton}>Withdraw</button>
+                                
+                            </div>
+                        } 
                         </form>
 
 

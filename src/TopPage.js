@@ -10,9 +10,9 @@ import logo from "./assets/logo2.png"
 import ReferralLink from './ReferralLink.js';
 import Withdraw from './Withdraw.js';
 
-// const tokenAddress = "0x7CF0cD831f0DF6A3DE92Ce0338475526be5da377"; 
+// const tokenAddress = "0xFa03245C5ac7d07a26e0acE92cbC64634CccF80B"; 
 // const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
-const contractAddress = "0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc";
+const contractAddress = "0x7a58a9c3c76227010FcC41fEC2f3932EC9c64573";
 // const url = "https://biyondinfinity.farm";
 
 class TopPage extends Component { 
@@ -21,27 +21,55 @@ class TopPage extends Component {
 
         await this.loadBlockChainData();
 
-        //    setInterval(() => {
-        //         this.timerData(); 
-        //     }, 10000); 
+           setInterval(() => {
+                this.timerData(); 
+            }, 10000); 
    } 
 
-//    timerData = async () => {
-//     let { contractInstance } = await getBlockchain();
+   timerData = async () => {
+    let { contractInstance } = await getBlockchain();
 
-//     let pool_last_draw = await contractInstance.pool_last_draw();
-//     this.setState({ pool_last_draw : Number(pool_last_draw) }); 
-//    // console.log(this.state.pool_last_draw)
+    const pool_last_draw = await contractInstance.pool_last_draw();
+       this.setState({ pool_last_draw: Number(pool_last_draw) });
 
-//     let time_now = await contractInstance.getNow();
-//     this.setState({ time_now : Number(time_now) }); 
-//     console.log('now '+this.state.time_now)
+       const time_step = await contractInstance.time_period();
+       this.setState({ time_step: Number(time_step) });
 
-//     let diff = this.state.time_now - this.state.pool_last_draw; 
+       const now = await contractInstance.getNow();
+       this.setState({ now: Number(now) });
+       
+        var draw_hrs = 0;
+        var draw_mins = 0;
+        var draw_secs = 0;
 
-//     this.setState({ diff });
-//      console.log(this.state.diff);
-//     }     
+        var next_draw_time = Number(this.state.pool_last_draw + this.state.time_step - this.state.now);
+        if (next_draw_time < 0) {
+            next_draw_time = 0;
+        }
+        if (next_draw_time > 3600) {
+            draw_hrs = Math.floor(next_draw_time / 3600);
+            draw_mins = Math.floor((next_draw_time % 3600) / 60);
+            draw_secs = Math.floor(next_draw_time % 60);
+        } else if (next_draw_time > 60) {
+            draw_mins = Math.floor(next_draw_time / 60);
+            draw_secs = Math.floor(next_draw_time % 60);
+
+        } else {
+            draw_secs = next_draw_time;
+        }
+        this.setState({ draw_hrs });
+        this.setState({ draw_mins });
+        this.setState({ draw_secs });
+        console.log('next draw hrs - ' + this.state.draw_hrs)
+        console.log('next draw mins - ' + this.state.draw_mins)
+        console.log('next draw secs - ' + this.state.draw_secs)
+
+        setInterval(() => {
+            this.setState({ next_draw_time  });
+        }, 1000);
+
+       
+    }     
 
    loadBlockChainData = async () => {
 
@@ -94,6 +122,11 @@ class TopPage extends Component {
        this.setState({ direct_biz : (Number(userInfo.direct_biz)/10**(this.state.tokenDecimals)) });
        this.setState({ pool_bonus : (Number(userInfo.pool_bonus)/10**(this.state.tokenDecimals)) }); 
        this.setState({ gen_bonus : (Number(userInfo.gen_bonus)/10**(this.state.tokenDecimals)) }); 
+
+       
+       
+       
+       
        // USDT Instance
         
        let usdtDecimals  = await usdtInstance.decimals() ;
@@ -123,10 +156,8 @@ class TopPage extends Component {
     };
     return (
         <div style={backStyle } >
-                <div style={{ textAlign: "center" }}>
-                                        
-                            <img src={logo} alt=""  width="300" />
-                         
+                <div style={{ textAlign: "center", marginBottom:"-40px" }}>
+                    <img src={logo} alt=""  width="220" /> 
                 </div>
 
                 
@@ -163,6 +194,10 @@ class TopPage extends Component {
                     _total_rt_sold        = {this.state._total_rt_sold        }
                     _total_no_purchases   = {this.state._total_no_purchases   }
                     _total_usd_withdrawn  = {this.state._total_usd_withdrawn  }
+                    next_draw_time={this.state.next_draw_time}
+                    draw_hrs={this.state.draw_hrs}
+                    draw_mins={this.state.draw_mins}
+                    draw_secs={this.state.draw_secs}
                 />           
                 <UserInfo 
                     upline =        {this.state.upline}  

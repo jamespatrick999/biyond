@@ -13,7 +13,7 @@ export class ApproveUSD extends Component {
 
         this.state = {
             count: 0, 
-            contractAddress: '0x60Cd8C46747A1E94Fd30B65A984435f08D61e5Cc'
+            contractAddress: '0x7a58a9c3c76227010FcC41fEC2f3932EC9c64573'
         }
         
         this.button10 = this.button10.bind(this); 
@@ -133,7 +133,7 @@ export class ApproveUSD extends Component {
             display: "inline-block",
             padding: "0.5em 1em",
             textDecoration: "none",
-            color: "#2DE1EE",
+            color: "#eee97f",
             transition: ".4s", marginTop: "10px", marginLeft: "10px", marginBottom: "10px", fontWeight: "3px", border: "3px solid white", backgroundColor: "black"
         }
 
@@ -142,7 +142,7 @@ export class ApproveUSD extends Component {
             padding: "0.5em 1em",
             textDecoration: "none",
             color: "black",
-            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px", marginLeft: "150px"
+            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px" 
         };
 
         return (
@@ -151,7 +151,7 @@ export class ApproveUSD extends Component {
                     <div className="col-xl-4"></div>
                     <div className="col-xl-4" style={colStyle}> 
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#eee97f", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                            Approve USDT</div>
                         <br />
                         <form
@@ -178,8 +178,8 @@ export class ApproveUSD extends Component {
                             }}
 
                         >    
-                        <label style={{color: "#2DE1EE"}}>Enter Amount (in USDT) </label>
-                        <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "#2DE1EE", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
+                        <label style={{color: "#eee97f"}}>Enter Amount (in USDT) </label>
+                        <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "#eee97f", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
 
 
                         <a href="#10" className="btn btn-primary" style={addButton} onClick={this.button10}>+10</a> 
@@ -193,17 +193,17 @@ export class ApproveUSD extends Component {
 
                         <br />
 
-                        {/* <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "22px" }}>Your token Balance : {this.props.tokenBal} tokens</p> */}
-                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>Your USDT Balance : {this.props.usdtBal} USDT</p>
+                        {/* <p style={{ color: "#eee97f", textAlign: "center", fontSize: "22px" }}>Your token Balance : {this.props.tokenBal} tokens</p> */}
+                        <p style={{ color: "#eee97f", textAlign: "center", fontSize: "14px" }}>Your USDT Balance : {this.props.usdtBal} USDT</p>
                          
-                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>You will get (BOND ) : {this.state.count/this.props.rtPrice}  </p>
+                        <p style={{ color: "#eee97f", textAlign: "center", fontSize: "14px" }}>You will get (BOND ) : {this.state.count/this.props.rtPrice}  </p>
                          
-                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>Price per token : {this.props.rtPrice} USDT </p>
+                        <p style={{ color: "#eee97f", textAlign: "center", fontSize: "14px" }}>Price per token : {this.props.rtPrice} USDT </p>
 
-                        <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
-                         
-                        <button type="submit" className="btn btn-success" style={firstAllowanceButton}>Approve USDT</button> 
- 
+                        <p style={{ color: "#eee97f", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
+                        <div style={{ textAlign: "center" }}>
+                            <button type="submit" className="btn btn-success" style={firstAllowanceButton}>Approve USDT</button> 
+                        </div>
                         </form> 
 
                     </div>

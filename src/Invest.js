@@ -103,7 +103,7 @@ export class Invest extends Component {
             padding: "0.5em 1em",
             textDecoration: "none",
             color: "black",
-            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px", marginLeft: "150px"
+            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px" 
         };
 
         return (
@@ -113,7 +113,7 @@ export class Invest extends Component {
                     <div className="col-xl-4" style={colStyle}>
 
 
-                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#2DE1EE", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
+                        <div className="col-xl-12" style={{ marginTop: "-18px", marginLeft: "-5px", backgroundImage: "linear-gradient(to right, #131050, black)", borderRadius: "5px", color: "#eee97f", textAlign: "center", fontWeight: "bold", fontSize: "21px" }}>
                            Purchase Section</div>
                         <br />
                         <form
@@ -148,16 +148,19 @@ export class Invest extends Component {
                             <a href="#500000" className="btn btn-primary" style={addButton} onClick={this.button500k}>+500 k</a>
                             <a href="#reset" className="btn btn-primary" style={addButton} onClick={this.reset}>Reset</a><br /> */}
                             
-                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.usdApproved).toFixed(0)} USDT</p>
+                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.usdApproved).toFixed(0)} USDT</p>
                              
  
-                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Your BOND Balance : {this.props.rtBal} BOND</p>
+                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "15px" }}>Your BOND Balance : {this.props.rtBal} BOND</p>
                             
 
-                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "15px" }}>Contract token Balance : {this.props.contractRTBal} tokens</p>
+                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "15px" }}>Contract token Balance : {this.props.contractRTBal} tokens</p>
 
-                            <p style={{ color: "#2DE1EE", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
-                            <button type="submit" className="btn btn-success" style={purchaseButton}>Purchase</button> 
+                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "14px" }}>BOND Balance : {this.props.rtBal} BOND </p>
+
+                            <div style={{ textAlign: "center" }}>
+                                <button type="submit" className="btn btn-success" style={purchaseButton}>Purchase</button> 
+                            </div>
  
                         </form>
 
