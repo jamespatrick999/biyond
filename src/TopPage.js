@@ -10,9 +10,9 @@ import logo from "./assets/logo2.png"
 import ReferralLink from './ReferralLink.js';
 import Withdraw from './Withdraw.js';
 
-// const tokenAddress = "0xFa03245C5ac7d07a26e0acE92cbC64634CccF80B"; 
+// const tokenAddress = "0x6935A83F6B250a1189bA6cf6Ed433503913Dd527"; 
 // const usdtAddress = "0x64E0Ff29Fcd9813CAc3dc6ac67a10B98a155C2f8";
-const contractAddress = "0x7a58a9c3c76227010FcC41fEC2f3932EC9c64573";
+const contractAddress = "0x054729A818dbC1dE2B434e2c76e91622440456fc";
 // const url = "https://biyondinfinity.farm";
 
 class TopPage extends Component { 
@@ -105,6 +105,14 @@ class TopPage extends Component {
        let rtPrice = await contractInstance.getRTPrice();
        this.setState({ rtPrice : (Number(rtPrice)/10**(this.state.tokenDecimals)) });   
 
+       let pool_balance = await contractInstance.pool_balance();
+       this.setState({ pool_balance : (Number(pool_balance)/10**(this.state.tokenDecimals)) });   
+
+
+       let pool_cycle = await contractInstance.pool_cycle();
+       this.setState({ pool_cycle : (Number(pool_cycle)) });   
+
+
        let contractInfo = await contractInstance.getContractInfo();
        this.setState({ contract_rt_balance : (Number(contractInfo.contract_rt_balance)/10**(this.state.tokenDecimals)) });
        this.setState({ contract_tusd_balance : (Number(contractInfo.contract_tusd_balance)/10**(this.state.tokenDecimals)) });
@@ -188,6 +196,8 @@ class TopPage extends Component {
                 }
                 <ContractInfo 
                     contract_rt_balance = {this.state.contract_rt_balance}  
+                    pool_balance = {this.state.pool_balance}  
+                    pool_cycle = {this.state.pool_cycle}  
                     contract_tusd_balance = {this.state.contract_tusd_balance }
                     contract_total_users  = {this.state.contract_total_users  }
                     _total_usd_purchased  = {this.state._total_usd_purchased  }

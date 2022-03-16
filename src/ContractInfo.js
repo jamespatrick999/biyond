@@ -42,6 +42,12 @@ export class ContractInfo extends Component {
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Total USDT Withdrawn</p>
                             <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props._total_usd_withdrawn } USDT  </a>
                             <br /><br />
+                            <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Pool Balance</p>
+                            <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.pool_balance } USDT  </a>
+                            <br /><br />
+                            <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>No. of Pool Cycles</p>
+                            <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}># {this.props.pool_cycle }    </a>
+                            <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Next Draw (Top)</p>
                             <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.draw_hrs }h : {this.props.draw_mins }m : {this.props.draw_secs }s</a>
                             <br /><br />
